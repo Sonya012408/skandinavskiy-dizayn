@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Скандинавский дизайн — разбор книги Кати Карлинг</title>
+<style>
+@page { size: A4; margin: 20mm 18mm 24mm 18mm; }
+@page cover { size: A4; margin: 0; }
+
+html,body{margin:0;padding:0}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:10.3pt; line-height:1.52; color:#1F221B;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  hyphens:auto; -webkit-hyphens:auto;
+}
+h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.14;break-after:avoid-page;page-break-after:avoid}
+p{margin:0 0 3.4mm}
+img{display:block}
+.sans{font-family:'Segoe UI',Arial,sans-serif}
+
+/* ---------- COVER ---------- */
+.cover{page:cover;position:relative;width:100%;height:297mm;overflow:hidden;background:#191B16;
+  break-after:page;page-break-after:always}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.66}
+.cover .veil{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,22,18,.72) 0%,rgba(20,22,18,.18) 38%,rgba(20,22,18,.94) 100%)}
+.cover .in{position:absolute;left:20mm;right:20mm;bottom:24mm;color:#F4F1E7}
+.cover .kick{font-family:'Segoe UI',Arial,sans-serif;font-size:7.6pt;letter-spacing:.22em;
+  text-transform:uppercase;color:#B9B3A2;margin-bottom:7mm}
+.cover h1{font-size:44pt;letter-spacing:-.02em;line-height:1.02}
+.cover h1 em{font-style:italic;color:#D7C489}
+.cover .sub{font-size:13pt;line-height:1.4;color:#D9D4C6;margin-top:8mm;max-width:132mm}
+.cover .rule{height:1px;background:rgba(244,241,231,.3);margin:10mm 0 5mm}
+.cover .meta{font-family:'Segoe UI',Arial,sans-serif;font-size:8.4pt;color:#C8C3B4;
+  display:flex;gap:9mm;flex-wrap:wrap}
+.cover .meta b{color:#F4F1E7}
+.cover .cred{position:absolute;right:6mm;bottom:4mm;font-family:'Segoe UI',Arial,sans-serif;
+  font-size:5.8pt;color:rgba(244,241,231,.45)}
+
+/* ---------- STRUCTURE ---------- */
+.page{break-after:page;page-break-after:always}
+.newpage{break-before:page;page-break-before:always}
+.kick{font-family:'Segoe UI',Arial,sans-serif;font-size:7.4pt;letter-spacing:.2em;
+  text-transform:uppercase;color:#8B8E80;font-weight:700}
+h2{font-size:23pt;letter-spacing:-.01em;margin:3mm 0 4mm}
+h3{font-size:15.5pt;margin:0 0 3.5mm}
+.lead{font-size:12pt;line-height:1.44;color:#585C50;margin-bottom:6mm}
+.epi{font-size:14pt;line-height:1.45;font-style:italic;max-width:120mm;margin:0 auto}
+.epi cite{display:block;font-family:'Segoe UI',Arial,sans-serif;font-style:normal;
+  font-size:8.2pt;color:#8B8E80;margin-top:5mm;letter-spacing:.04em}
+
+/* ---------- TOC ---------- */
+.toc{margin-top:3mm}
+.toc .row{display:flex;align-items:baseline;gap:2mm;padding:1.45mm 0;border-bottom:.3pt solid #E5DECD}
+.toc .n{font-family:'Segoe UI',Arial,sans-serif;font-size:8pt;font-weight:700;color:#4F5F3A;
+  width:9mm;flex:none}
+.toc .t{flex:1}
+.toc .t b{font-weight:600}
+.toc .t i{font-style:normal;color:#8B8E80;font-size:9pt}
+.toc .p{font-family:'Segoe UI',Arial,sans-serif;font-size:9pt;color:#585C50;
+  font-variant-numeric:tabular-nums;flex:none}
+.toc .grp{font-family:'Segoe UI',Arial,sans-serif;font-size:7.2pt;letter-spacing:.18em;
+  text-transform:uppercase;color:#96742E;font-weight:700;margin:4.2mm 0 .6mm}
+
+/* ---------- CASE ---------- */
+.case{break-before:page;page-break-before:always;break-inside:avoid-page}
+.case-hd{display:flex;align-items:baseline;gap:4mm;margin-bottom:2.5mm}
+.case-hd .num{font-size:26pt;color:#4F5F3A;line-height:1}
+.case-hd .rub{font-family:'Segoe UI',Arial,sans-serif;font-size:7.4pt;letter-spacing:.2em;
+  text-transform:uppercase;color:#8B8E80;font-weight:700}
+.case h3{font-size:18pt;margin-bottom:4.5mm}
+.arrow{color:#96742E;font-style:normal}
+figure{margin:0 0 5mm}
+figure img{width:100%;height:76mm;object-fit:cover;border-radius:1mm}
+figure.tall img{height:104mm;object-fit:contain;background:#EFEAE0;padding:3mm}
+figcaption{font-family:'Segoe UI',Arial,sans-serif;font-size:7pt;color:#8B8E80;
+  margin-top:1.6mm;line-height:1.35}
+
+.grid{display:grid;grid-template-columns:112mm 1fr;gap:8mm;align-items:start}
+.side{font-family:'Segoe UI',Arial,sans-serif}
+
+/* was / now */
+.ba{margin-top:4mm;break-inside:avoid}
+.ba>div{padding:3mm 3.6mm;margin-bottom:2.4mm;font-size:8.8pt;line-height:1.45;
+  font-family:'Segoe UI',Arial,sans-serif;border-radius:1mm}
+.was{background:#E6E0D2;border-left:1.2pt solid #8B8E80}
+.now{background:#FAF8F4;border-left:1.2pt solid #4F5F3A;border-top:.3pt solid #E5DECD;
+  border-right:.3pt solid #E5DECD;border-bottom:.3pt solid #E5DECD}
+.ba .k{display:block;font-size:6.6pt;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;margin-bottom:1.4mm}
+.was .k{color:#6E7264} .now .k{color:#4F5F3A}
+
+.take{margin-top:4mm;padding:3.4mm 4mm;background:#FAF8F4;border-left:1.6pt solid #96742E;
+  border-top:.3pt solid #E5DECD;border-right:.3pt solid #E5DECD;border-bottom:.3pt solid #E5DECD;
+  font-size:9.2pt;line-height:1.46;break-inside:avoid;border-radius:1mm}
+.take .k{display:block;font-family:'Segoe UI',Arial,sans-serif;font-size:6.6pt;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:#96742E;margin-bottom:1.6mm}
+
+.nums{display:flex;flex-direction:column;gap:2.4mm}
+.nums div{background:#FAF8F4;border:.3pt solid #E5DECD;padding:2.6mm 3mm;border-radius:1mm}
+.nums .n{font-family:Georgia,serif;font-size:15pt;color:#4F5F3A;line-height:1;
+  font-variant-numeric:tabular-nums}
+.nums .t{font-size:7.4pt;color:#585C50;margin-top:1.2mm;line-height:1.32}
+
+blockquote{margin:4mm 0 0;padding-left:4mm;border-left:1.6pt solid #96742E;
+  font-style:italic;font-size:11pt;line-height:1.4;break-inside:avoid}
+blockquote cite{display:block;font-family:'Segoe UI',Arial,sans-serif;font-style:normal;
+  font-size:7.4pt;color:#8B8E80;margin-top:2.4mm;letter-spacing:.03em}
+
+/* boxes */
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:5mm}
+.box{background:#FAF8F4;border:.3pt solid #E5DECD;padding:3.2mm 3.6mm;border-radius:1mm;
+  break-inside:avoid;font-family:'Segoe UI',Arial,sans-serif}
+.box .k{display:block;font-size:6.6pt;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:#4F5F3A;margin-bottom:1.6mm}
+.box p{font-size:8.4pt;line-height:1.45;color:#585C50;margin:0}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+.gal figure{margin:0;break-inside:avoid}
+.gal figure img{height:58mm}
+
+/* rules */
+.law{display:grid;grid-template-columns:8mm 1fr;gap:4mm;padding:3.2mm 0;
+  border-bottom:.3pt solid #E5DECD;break-inside:avoid}
+.law .n{font-size:16pt;color:#4F5F3A;line-height:1}
+.law h4{font-family:'Segoe UI',Arial,sans-serif;font-size:9.6pt;margin:0 0 1.4mm}
+.law p{font-size:9pt;color:#585C50;margin:0;line-height:1.45}
+
+/* checklist */
+.chk{margin-top:5mm}
+.chk div{display:grid;grid-template-columns:5mm 1fr;gap:3mm;padding:2.6mm 0;
+  border-bottom:.3pt solid #E5DECD;break-inside:avoid;font-size:9.4pt}
+.chk .sq{width:3.6mm;height:3.6mm;border:.8pt solid #8B8E80;margin-top:1mm;border-radius:.5mm}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:9pt;margin-top:4mm}
+th,td{text-align:left;padding:2.4mm 2.6mm;border-bottom:.3pt solid #E5DECD;vertical-align:top}
+th{font-family:'Segoe UI',Arial,sans-serif;font-size:7pt;letter-spacing:.14em;
+  text-transform:uppercase;color:#8B8E80;font-weight:700}
+td b{font-weight:600}
+tr{break-inside:avoid}
+
+.src{font-family:'Segoe UI',Arial,sans-serif;font-size:8.2pt;line-height:1.5;color:#585C50}
+.src b{color:#1F221B}
+.two{column-count:2;column-gap:8mm}
+.two p{margin-bottom:3mm}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <img src="assets/img14.jpg" alt="">
+  <div class="veil"></div>
+  <div class="in">
+    <div class="kick">Катя Карлинг · Альпина Паблишер · 223 страницы</div>
+    <h1>Скандинавский дизайн</h1>
+    <h1><em>копия по фотографии не работает</em></h1>
+    <p class="sub">Двенадцать разобранных случаев, точные цифры и предметы, которые можно найти по названию. Что именно скандинавы делают со светом, окнами и вещами — и почему это невидимо на журнальных снимках.</p>
+    <div class="rule"></div>
+    <div class="meta">
+      <span><b>12</b> кейсов</span>
+      <span><b>18</b> изображений</span>
+      <span><b>10</b> глав книги</span>
+      <span><b>9</b> сквозных правил</span>
+    </div>
+  </div>
+  <div class="cred">Карл Ларссон. «Столовая», серия «Ett hem», 1899. Nationalmuseum · public domain</div>
+</div>
+
+<!-- ============ EPIGRAPH ============ -->
+<div class="page" style="display:flex;align-items:center;justify-content:center;height:225mm">
+  <div class="epi" style="text-align:center">
+    «Довольно часто сами скандинавы не могут дать объяснение тем или иным интерьерным традициям: они с этим выросли и считают само собой разумеющимся».
+    <cite>Катя Карлинг, дизайнер интерьера, Стокгольм</cite>
+  </div>
+</div>
+
+<!-- ============ TOC ============ -->
+<div class="page">
+  <div class="kick">Содержание</div>
+  <h2>Что внутри</h2>
+  <div class="toc">
+    <div class="grp">Часть I · Случаи из практики</div>
+    <div class="row"><span class="n">01</span><span class="t"><b>Детская ванная.</b> <i>Кафель в виде футбольных мячей → полотенца в полоску</i></span><span class="p" data-toc="Детская ванная">5</span></div>
+    <div class="row"><span class="n">02</span><span class="t"><b>Обеденные стулья.</b> <i>Дешёвая несъёмная обивка → реечный стул</i></span><span class="p" data-toc="Обеденные стулья">6</span></div>
+    <div class="row"><span class="n">03</span><span class="t"><b>Акцентная стена.</b> <i>«Чужая энергия» винтажных тарелок → глубина</i></span><span class="p" data-toc="Акцентная стена">7</span></div>
+    <div class="row"><span class="n">04</span><span class="t"><b>Наследство.</b> <i>Буфет, который не брали даром → светло-зелёный акцент</i></span><span class="p" data-toc="Наследство">8</span></div>
+    <div class="row"><span class="n">05</span><span class="t"><b>Выбор палитры.</b> <i>«В комнате нет цвета» → палитра от паркета</i></span><span class="p" data-toc="Выбор палитры">9</span></div>
+    <div class="row"><span class="n">06</span><span class="t"><b>Вечерние посиделки.</b> <i>«Неудобные стулья» → приставной столик</i></span><span class="p" data-toc="Вечерние посиделки">10</span></div>
+
+    <div class="grp">Часть II · Предметы-эталоны</div>
+    <div class="row"><span class="n">07</span><span class="t"><b>Стул.</b> <i>Wishbone Ханса Вегнера</i></span><span class="p" data-toc="Wishbone Ханса Вегнера">11</span></div>
+    <div class="row"><span class="n">08</span><span class="t"><b>Светильник.</b> <i>PH-лампа Поуля Хеннингсена</i></span><span class="p" data-toc="PH-лампа Поуля">12</span></div>
+    <div class="row"><span class="n">09</span><span class="t"><b>Ваза.</b> <i>Savoy Алвара Аалто</i></span><span class="p" data-toc="Savoy Алвара Аалто">13</span></div>
+    <div class="row"><span class="n">10</span><span class="t"><b>Кресло.</b> <i>Бруно Матссон и физика позы</i></span><span class="p" data-toc="Бруно Матссон и физика">14</span></div>
+    <div class="row"><span class="n">11</span><span class="t"><b>Орнамент.</b> <i>Morris &amp; Co — стиль не аскетичен</i></span><span class="p" data-toc="Morris">15</span></div>
+    <div class="row"><span class="n">12</span><span class="t"><b>Традиция.</b> <i>Julstjärna — светильник с единственным местом</i></span><span class="p" data-toc="Julstjärna">16</span></div>
+
+    <div class="grp">Часть III · Устройство</div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Два белых.</b> <i>«Стокгольмский белый» S 0502-Y и ошибка «больнички»</i></span><span class="p" data-toc="Два белых">17</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Свет.</b> <i>Почему диммер не создаёт уюта</i></span><span class="p" data-toc="Почему диммер">18</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Средняя линия интерьера</b></span><span class="p" data-toc="вынести всего одно понятие">20</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Пропорция.</b> <i>Почему 50/50 читается как хаос</i></span><span class="p" data-toc="Почему 50/50">21</span></div>
+
+    <div class="grp">Часть IV · Первоисточник</div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Эллен Кей.</b> <i>«Красота — не роскошь, а необходимость»</i></span><span class="p" data-toc="Эллен Кей">22</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Карин и Карл Ларссоны.</b> <i>Инфлюэнсеры XIX века</i></span><span class="p" data-toc="Карин и Карл Ларссоны">24</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Не пыль решает, как выглядит дом</b></span><span class="p" data-toc="Не пыль">25</span></div>
+
+    <div class="grp">Приложения</div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Девять сквозных правил</b></span><span class="p" data-toc="Девять сквозных правил">26</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Что сделать сегодня вечером.</b> <i>Чек-лист на 12 пунктов</i></span><span class="p" data-toc="сегодня вечером">27</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Числовые ориентиры</b></span><span class="p" data-toc="Числовые ориентиры">28</span></div>
+    <div class="row"><span class="n">·</span><span class="t"><b>Источники и лицензии</b></span><span class="p" data-toc="Источники и лицензии">29</span></div>
+  </div>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="newpage">
+  <div class="kick">Пролог</div>
+  <h2>Мелочи, которых не видно на снимке</h2>
+  <p class="lead">Стиль разошёлся по миру по фотографиям — и на фотографиях потерялось ровно то, что делает его работающим.</p>
+  <div class="two">
+    <p>Покупаешь мебель в известном шведском магазине, расставляешь дома, а «по-скандинавски» не выходит: что-то неуловимое исчезает. Автор книги живёт и работает дизайнером интерьера в Швеции, и её преимущество в том, что она смотрит на этот быт со стороны — из двух культур сразу.</p>
+    <p>Самый показательный пример потери — краска. Поклонники стиля за пределами Скандинавии красят стены и потолок одинаковой ярко-белой краской. В Скандинавии так не делают никогда: у стены и потолка разные задачи, и белый у них разный. На фотографии эту разницу разглядеть невозможно — но именно она отделяет тёплую комнату от «больнички».</p>
+    <p>Второй сюжет — климат. Долгая зима и короткое лето заставляют жителей севера проводить в помещении подавляющую часть года. В южных регионах, где значительную часть года можно быть на воздухе, оформление интерьера просто не настолько значимо. Скандинавы стали обладателями «чёрного пояса» по интерьеру не от хорошей жизни: уютный дом здесь не роскошь, а необходимость.</p>
+    <p>И третий, главный. На лекциях автор спрашивает: что главное в скандинавском интерьере? Отвечают — мебель, освещение, зонирование, цвет стен. Её ответ: люди. Те, ради кого всё это затевается.</p>
+    <p>Отсюда единственный рабочий критерий при ремонте. Не «идеально ли выровнены стены», а «добавит ли это помещению уюта». Бывает, попадаешь в безупречный интерьер, на который потрачены огромные ресурсы, — и задерживаться в нём не хочется. А бывает, открываешь дверь крошечной квартирки под крышей старого дома без лифта и понимаешь: здесь я мог бы остаться навсегда.</p>
+    <p>Дальше — двенадцать случаев, где видно, что именно исчезает при копировании. Шесть из практики автора с реальными клиентами, шесть — предметы и традиции, которые она называет поимённо и советует искать по названию.</p>
+  </div>
+</div>
+
+<!-- ============ CASES I ============ -->
+<div class="case">
+  <div class="case-hd"><span class="num">01</span><span class="rub">Случай из практики · Детская ванная</span></div>
+  <h3>Кафель в виде футбольных мячей <span class="arrow">→</span> полотенца в полоску</h3>
+  <figure><img src="assets/img19.jpg" alt="">
+    <figcaption>Карл Ларссон. «Комната папы», серия «Ett hem». Характер хозяина задан книгами, картинами и предметами, а не отделкой стен. Nationalmuseum · public domain</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Родители оформили ванную сына с учётом его увлечения: пол — чёрно-белая шахматная плитка, кафель на стенах выложен в форме мячей и ворот, мозаичная надпись с названием любимой команды.</p>
+      <p>Первое время мальчик был в восторге. Через пару лет он охладел к футболу, комната стала раздражать, и он отказался ею пользоваться — перекочевал в родительский санузел. Хозяева дома были не в восторге от нежданного соседства и обратились к автору за советом.</p>
+      <div class="ba">
+        <div class="was"><span class="k">Было</span>Вкус выражен через стационарные носители — плитку и мозаику. Автор называет это «неберущимся голом»: решить проблему неинвазивным способом невозможно, только полная замена кафеля.</div>
+        <div class="now"><span class="k">Как надо было</span>Нейтральная отделка плюс мобильные носители: полотенца в чёрно-белую полоску, коврик цвета футбольного газона, постер с портретом любимого игрока.</div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Вывод</span>Интерьер должен отражать характер хозяев — но носители вкуса обязаны быть мобильными. Предпочтения меняются даже у взрослых, а у детей интересы меняются <b>гораздо быстрее, чем помещение требует обновления</b>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">02</span><span class="rub">Случай из практики · Обеденные стулья</span></div>
+  <h3>Дешёвая несъёмная обивка <span class="arrow">→</span> реечный стул со съёмной подушкой</h3>
+  <figure><img src="assets/img03.jpg" alt="">
+    <figcaption>Шведские реечные стулья — <i>pinnstol</i>. Wikimedia Commons · CC BY-SA</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Молодая семья с двумя детьми выбрала к столу недорогие стулья с несъёмной тканевой обивкой сидений <i>и</i> спинок. Деревянные реечные — практичнее, но дороже — не рассматривались.</p>
+      <p>Через пару лет активного использования обивка пришла в негодность: сначала пятна отчищались, потом перестали. Полная перетяжка требовала денег и времени. В итоге семья всё же купила реечные стулья со съёмными стирающимися подушками.</p>
+      <p>У pinnstol три достоинства: визуальная лёгкость (реечная спинка не перекрывает поток дневного света из окна), физическая лёгкость (стул двигается одной рукой, когда в другой бокал) и долговечность.</p>
+      <div class="take"><span class="k">Важная оговорка автора</span>«Скупой платит дважды» здесь не подходит. Семья взяла бы реечные сразу, <b>если бы знала об особенностях эксплуатации</b>. Проблема была не в жадности, а в отсутствии информации о том, как ведут себя материалы.</div>
+    </div>
+    <div class="side nums">
+      <div><div class="n">2 года</div><div class="t">до полного износа текстильной обивки</div></div>
+      <div><div class="n">×2</div><div class="t">оплачен и первый комплект, и второй</div></div>
+      <div><div class="n">поколения</div><div class="t">срок службы качественного реечного стула</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">03</span><span class="rub">Случай из практики · Акцентная стена</span></div>
+  <h3>«Чужая энергия» винтажных тарелок <span class="arrow">→</span> глубина и связь с историей</h3>
+  <figure><img src="assets/img10.jpg" alt="">
+    <figcaption>Карл Ларссон. «Кухня», 1898. Посуда с историей на виду — приём, которому больше века. Nationalmuseum · public domain</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Клиентка хотела оформить стену кухни винтажными тарелками. Автор подобрала на онлайн-аукционе несколько видов старинных тарелок и специальные полки. Муж клиентки отнёсся к идее с недоверием: ему казалось, что тарелки несут негативную энергию прежних владельцев.</p>
+      <p>Обсудили с разных сторон и пришли к выводу: абсолютно новыми вещами мы пользуемся не так уж часто. В ресторанах едим из посуды после сотен людей, в гостиницах спим на чистом, но бывшем в употреблении белье, в спортклубе вытираемся многоразовыми полотенцами.</p>
+      <blockquote>Если уж верить в ауру вещи, то почему непременно в негативную? Почему бы не представить, что винтажная тарелка приносила счастье предыдущим владельцам и продолжит приносить его нам?<cite>Аргумент клиентки, решивший спор</cite></blockquote>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Вывод</span>Главное — уметь <b>отличать чистоту вещи от её «ауры»</b>. Гигиена важна, старые вещи должны быть чистыми. Сам предмет обладает только материальной ценностью; эмоциональную придаём ему мы сами.</div>
+      <div class="take" style="border-left-color:#4F5F3A"><span class="k" style="color:#4F5F3A">Финал</span>Современная кухня с полками старинных тарелок получила интересный акцент — это добавило интерьеру глубину и связь с историей.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">04</span><span class="rub">Случай из практики · Наследство</span></div>
+  <h3>Дубовый буфет, который не брали даром <span class="arrow">→</span> светло-зелёный акцент</h3>
+  <figure><img src="assets/img18.jpg" alt="">
+    <figcaption>Карл Ларссон. «Уютный уголок», серия «Ett hem». Крашеная мебель ярких оттенков — шведская традиция, а не современная мода. Nationalmuseum · public domain</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Знакомым автора достался в наследство старинный дубовый буфет с резными дверцами. Когда-то это был очень дорогой предмет обстановки: часы ручного труда мебельщиков-краснодеревщиков, качественные материалы. Но дизайн устарел, спроса не было, продать почти невозможно, стоимость ничтожна.</p>
+      <div class="ba">
+        <div class="was"><span class="k">Было</span>Тёмно-коричневый резной буфет. Отличная сохранность, высокое качество исполнения — и нулевая рыночная стоимость.</div>
+        <div class="now"><span class="k">Стало</span>Перекрашен в актуальный светло-зелёный под интерьер. К полкам за стеклянными дверцами добавлена подсветка. Предмет преобразился.</div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Экономика вопроса</span>Купить аналогичный буфет современного производства стоило бы внушительную сумму: <b>стоимость ручного труда в наши дни возросла многократно</b>. Многие старинные технологии утеряны или невоспроизводимы по цене — тем ценнее то, что уже сделано.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">05</span><span class="rub">Случай из практики · Выбор палитры</span></div>
+  <h3>«В комнате нет никакого цвета» <span class="arrow">→</span> палитра от дубового паркета</h3>
+  <figure><img src="assets/img07.jpg" alt="">
+    <figcaption>Карл Ларссон. «Ленивый уголок». Палитра выведена из дерева и текстиля, а не назначена сверху. Nationalmuseum · public domain</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Клиентка въехала в квартиру с базовым ремонтом: светлые стены, дубовый паркет, белые окна и двери. Хотела добавить цвета, но не знала, от чего оттолкнуться: «В комнате пока нет никакого цвета, и я не знаю, что выбрать для мебели и текстиля».</p>
+      <p>Автор попросила прислать фотографии при дневном свете и обратила внимание: один цвет уже есть — <b>жёлто-коричневый оттенок дубового пола</b>. Поверхность пола имеет большую площадь и, как следствие, значительный визуальный вес, который стоит учитывать в общей концепции.</p>
+      <div class="take"><span class="k">Приём</span>Отправной точкой палитры может стать любой существующий объект: комод, кресло, картина — и даже <b>вид за окном</b>. В другом проекте гамму задал жёлто-горчичный фасад соседнего дома: цвет повторили в гардинах, подушках и картине — и как будто добавили комнате метров.</div>
+    </div>
+    <div class="side nums">
+      <div><div class="n">основа</div><div class="t">зелёный, коричневый, серый, песочный — приглушённые</div></div>
+      <div><div class="n">акценты</div><div class="t">бордовый, горчичный, сине-серый — насыщенные, но не яркие</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">06</span><span class="rub">Случай из практики · Вечерние посиделки</span></div>
+  <h3>«Неудобные стулья» <span class="arrow">→</span> приставной столик</h3>
+  <figure><img src="assets/img17.jpg" alt="">
+    <figcaption>Карл Ларссон. «Столовая», серия «Ett hem», 1899. Nationalmuseum · public domain</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Пара с маленьким ребёнком, дом с открытой планировкой: гостиная совмещена с кухней, есть угловой диван, телевизор, большой обеденный стол со стульями в мягкой обивке. Уложив ребёнка, родители любили подолгу сидеть вечерами за чашкой чая.</p>
+      <p>Стулья считали неудобными — приходилось класть ноги на сиденья соседних. Диваном при этом не пользовались: чашку рядом с ним поставить было некуда.</p>
+      <div class="ba">
+        <div class="was"><span class="k">Клиенты считали</span>Проблема в дизайне стульев. Собирались менять всю обеденную группу.</div>
+        <div class="now"><span class="k">Реальная причина</span>Никакие стулья не предназначены для длительного отдыха. Задача стула обеденной зоны — даже мягкого — обеспечить <b>кратковременный</b> отдых.</div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Решение</span>Вместо замены стульев — журнальный и <b>приставной</b> столики к дивану. Приставной ставится вплотную к подлокотнику: к нему не нужно наклоняться, чашку можно поднять и опустить, не меняя позы.</div>
+      <div class="take" style="border-left-color:#4F5F3A"><span class="k" style="color:#4F5F3A">Наблюдение</span>Нередко вечерние посиделки уходят из гостиной на кухню именно из-за отсутствия приставного столика. «Оттого, что в кузнице не было гвоздя…»</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CASES II ============ -->
+<div class="case">
+  <div class="case-hd"><span class="num">07</span><span class="rub">Предмет-эталон · Стул</span></div>
+  <h3>Wishbone Ханса Вегнера</h3>
+  <figure class="tall"><img src="assets/img08.jpg" alt="">
+    <figcaption>Wishbone Chair (CH24), Ханс Вегнер, 1949. Wikimedia Commons · CC BY 4.0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Книга приводит его первым в списке запросов, которые стоит вбить в поиск, чтобы понять, о каком типе предметов идёт речь: дизайн вне времени, выполненный в долговечном материале.</p>
+      <p>Он же иллюстрирует правило <b>«стул выбирают не глазами, а попой»</b>: холодный на вид деревянный стул без мягкого сиденья оказывается удобным за счёт эргономичной формы. На удобство влияет не столько материал, сколько форма и изгиб сиденья.</p>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Правило выбора</span>Дизайн и материал живут разное время. Ультрамодный светильник выйдет из моды раньше, чем износится металл; дешёвый пластик умрёт раньше, чем надоест форма. <b>Оптимум — вневременная форма в долговечном материале.</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">08</span><span class="rub">Предмет-эталон · Светильник</span></div>
+  <h3>PH-лампа Поуля Хеннингсена</h3>
+  <figure class="tall"><img src="assets/img02.jpg" alt="">
+    <figcaption>PH-лампа, Поуль Хеннингсен. Многослойный плафон рассеивает свет и полностью закрывает лампочку. Wikimedia Commons · CC BY-SA 3.0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>«Большинство знаменитых предметов скандинавского дизайна — это именно светильники», — пишет автор, и PH-лампа первая в её списке для поиска.</p>
+      <p>Конструкция — прямая иллюстрация главного требования книги к абажуру над обеденным столом: <b>лампочка утоплена глубоко и не видна из-под нижнего края</b>. Аналогия автора — перевёрнутый цветочный горшок с лампочкой внутри: он ярко освещает стол и при этом не слепит.</p>
+      <div class="ba">
+        <div class="was"><span class="k">Не работает</span>Лампочка выглядывает из-под края абажура. Она слепит сидящих, и лампу быстро заменяют на обычную потолочную — вся затея рушится.</div>
+        <div class="now"><span class="k">Работает</span>Свет падает вниз ярким куполом на скатерть, а комната остаётся в полумраке. Как в дорогом ресторане, в отличие от фастфуда с равномерной заливкой.</div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Три оговорки</span>Низкая лампа работает <b>только над стационарной</b> обеденной зоной. Вешают её в последнюю очередь — сначала ставят стол. И стулья должны свободно отодвигаться: при встроенной скамье придётся наклоняться над столом и можно задеть лампу головой.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">09</span><span class="rub">Предмет-эталон · Ваза</span></div>
+  <h3>Savoy Алвара Аалто</h3>
+  <figure class="tall"><img src="assets/img01.jpg" alt="">
+    <figcaption>Ваза Aalto (Savoy), Алвар Аалто, 1936. Iittala. Wikimedia Commons · CC BY 4.0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Третий из трёх поисковых запросов, которые автор даёт читателю. Стекло — материал, на котором время почти незаметно: возраст вазы выдают только стилевые особенности. При бережном обращении оно переносит годы лучше многого и почти не нуждается в уходе.</p>
+      <p>Отсюда шведская фраза <b>«стекло питается светом»</b>: стеклянные вазы и скульптуры выигрышнее всего смотрятся на просвет — на подоконнике или у окна, когда дневной свет подсвечивает их как будто изнутри.</p>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Компромисс с прозрачностью</span>Прозрачная ваза делает букет «парящим», но обнажает стебли. Решение — <b>гранёный хрусталь или фактурное стекло</b>: рельеф пропускает свет, но размывает содержимое. Тот же принцип со свечами: рельефные стенки многократно отражают пламя, гладкие — нет.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">10</span><span class="rub">Предмет-эталон · Кресло</span></div>
+  <h3>Бруно Матссон и физика позы</h3>
+  <figure class="tall"><img src="assets/img15.jpg" alt="">
+    <figcaption>Кресло Бруно Матссона. Форма подчинена позе тела. Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Легендарный шведский дизайнер, к которому книга обращается дважды. Его мысль: если человек работает, сидя в комфортной позе, мысли целиком сконцентрированы на деле; если поза неудобна, <b>мысли неосознанно заняты поиском комфортного положения тела</b>, и эффективность труда падает.</p>
+      <p>Биографическая деталь из книги: Матссон с женой первые годы после свадьбы снимали пару комнат <i>без кухни</i> и питались в общественной столовой — что не помешало им уютно обустроить жилище и считать его любимым домом.</p>
+      <div class="take"><span class="k">Два критерия расслабленности</span>Чем <b>больше угол</b> между спиной и бёдрами и чем <b>меньше расстояние</b> между ступнями и бёдрами, тем расслабленнее поза. И наоборот. Сначала решите, в какой позе предстоит сидеть, и только потом выбирайте тип и дизайн.</div>
+    </div>
+    <div class="side nums">
+      <div><div class="n">2 ч</div><div class="t">стул за обеденным столом</div></div>
+      <div><div class="n">8 ч</div><div class="t">офисное кресло, с перерывами</div></div>
+      <div><div class="n">весь день</div><div class="t">лаунж-кресло для отдыха</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">11</span><span class="rub">Предмет-эталон · Орнамент</span></div>
+  <h3>Morris &amp; Co — доказательство, что стиль не аскетичен</h3>
+  <figure><img src="assets/img06.jpg" alt="">
+    <figcaption>Уильям Моррис, «Willow Bough», 1887. The Met · CC0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Аргумент книги против главного стереотипа. Стиль <i>джапанди</i> (Japan + Scandi) лаконичен, но декоративность ему не чужда — и вот факт: <b>Япония и Скандинавия являются самыми крупными зарубежными рынками сбыта обоев Morris &amp; Co</b>.</p>
+      <p>Сам Уильям Моррис вместе с товарищами из братства прерафаэлитов основал во второй половине XIX века движение «Искусство и ремесло» как ответ на индустриализацию и массовое производство, вдохновляясь мастерами Средневековья.</p>
+    </div>
+    <div class="side">
+      <div class="take"><span class="k">Как применять</span>В скандинавском интерьере обоями оформляют <b>одну акцентную стену</b> — и в комнатах, где немного мебели и мелких предметов, иначе пространство перенасыщается деталями. Полностью оклеенные комнаты — это про историческую застройку, усадьбы и дачи.</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-hd"><span class="num">12</span><span class="rub">Предмет-эталон · Традиция</span></div>
+  <h3>Julstjärna — светильник, у которого одно-единственное место</h3>
+  <figure><img src="assets/img04.jpg" alt="">
+    <figcaption>Julstjärna — рождественская звезда в окне. Wikimedia Commons · CC BY-SA 3.0</figcaption></figure>
+  <div class="grid">
+    <div>
+      <p>Абажур в форме звезды на подвесе или подставке, лучей обычно от пяти до четырнадцати. Материал меняется с модой — пластик, папиросная бумага, текстиль, соломка, — но место неизменно: <b>всегда окно</b>. Изнутри звезда символически оказывается на фоне неба.</p>
+      <p>Традиция пришла из Германии, где сначала украшали церкви и городские пространства. Скандинавия — один из самых нерелигиозных регионов мира, но места в вечерних окнах звезда не меняет. Заодно это дополнительный источник атмосферного света в тёмный сезон, а с улицы окна многоэтажек складываются в звёздное небо.</p>
+      <div class="take"><span class="k">Та же ловушка, что с картинами</span>Размер обманчив. Звезда, которая выглядит большой в руках, станет непропорционально маленькой на окне. Поисковый запрос — <b>julstjärna lampa</b>.</div>
+    </div>
+    <div class="side nums">
+      <div><div class="n">70–90 см</div><div class="t">оптимальный диаметр для окна среднего размера</div></div>
+      <div><div class="n">5–14</div><div class="t">лучей у абажура</div></div>
+      <div><div class="n">4</div><div class="t">воскресенья адвента до Сочельника</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PART III ============ -->
+<div class="newpage">
+  <div class="kick">Часть III · Устройство</div>
+  <h2>Два белых, которые невозможно различить на фото</h2>
+  <p class="lead">Главная ошибка поклонников стиля за пределами Скандинавии — красить стены и потолок одинаковой ярко-белой краской.</p>
+  <p>У них разные задачи. Потолок должен отразить максимальное количество дневного света — его можно красить ярко-белым. Стена должна наполнить пространство светом, но не слепить глаза. Для неё существует отдельный оттенок с собственным именем.</p>
+
+  <div class="take" style="margin-top:6mm"><span class="k">Точный рецепт</span>Код по международной классификации NCS (Natural Colour System) — <b>S 0502-Y</b>. Зная код, любой производитель краски смешает нужный оттенок.<br><br>Устройство: в базовую белую эмульсию добавлено <b>по капле чёрного и жёлтого пигментов</b>. Жёлтый компенсирует голубизну дневного света, чёрный приглушает ослепляющую белизну. Пространство становится светлым, но не стерильным.</div>
+
+  <div class="boxes">
+    <div class="box"><span class="k">Откуда взялся</span><p>Пионеры движения за светлые стены клеили обои изнанкой наружу. Желтоватая бумага и слегка желтеющая масляная краска столярки задали этот едва тёплый белый.</p></div>
+    <div class="box"><span class="k">Почему не видно на фото</span><p>Разница двух оттенков почти незаметна глазом и полностью теряется при съёмке. Это тот случай, когда мелочь имеет решающее значение.</p></div>
+    <div class="box"><span class="k">Ответ шведа</span><p>«А какой ещё цвет стен может быть? Светлые стены — как чистый холст, на котором ни один цвет предмета не будет спорить с цветом стены».</p></div>
+    <div class="box"><span class="k">Пробные выкрасы</span><p>Цвет стен, как и одежду, надо примерять: нанести в два слоя на картонки и смотреть при дневном и вечернем освещении.</p></div>
+  </div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Часть III · Устройство</div>
+  <h2>Свет: почему диммер не создаёт уюта</h2>
+  <figure><img src="assets/img13.jpg" alt="">
+    <figcaption>Карл Ларссон. «Цветочное окно», 1894. Открытый подоконник как площадка средней линии интерьера. Nationalmuseum · public domain</figcaption></figure>
+  <p class="lead">«Если бы меня попросили назвать три главные вещи в интерьере, я бы не задумываясь ответила: свет, свет и ещё раз свет».</p>
+  <div class="two">
+    <p>Электрической лампе меньше полутора веков — до этого тысячелетиями быт освещался живым огнём: костром, дровяной печью, свечами, керосиновой лампой. Созерцание огня у нас в крови, и глаз воспринимает тёплый оттенок как уютный. Холодный голубоватый свет человеческому быту свойственен не был: в природе его давала разве что Луна.</p>
+      <p><b>Правило распределения.</b> Тёплый свет — во всех жилых пространствах. Холодный и нейтрально-белый — только там, где важна не атмосфера, а функциональность и корректная цветопередача: кладовая, гараж, гардеробная, прачечная, рабочая лампа домашнего офиса. «Оставим его аэропортам, больницам, офисам. Дом — территория уюта».</p>
+    <p><b>Что скрывают интерьерные фотографы.</b> В журналах почти нет вечерних кадров с включёнными лампами. Съёмка идёт при дневном свете, предпочтительно в пасмурный день: нет контрастных теней, не страдает цветопередача. При вечерней съёмке лампы дают «паразитное» освещение — голубые стены желтеют, благородный серый становится грязно-бежевым.</p>
+    <p>Ключевое различие глаза и объектива: то, что мы видим тёплым и уютным, камера видит мрачным и недоосвещённым. Значит, журнальная картинка показывает интерьер только в лучшем дневном ракурсе — искусственный свет вам просто не показали.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Температура</th><th>Как читается</th><th>Куда ставить</th></tr></thead>
+    <tbody>
+      <tr><td><b>2000–2500 K</b></td><td>Свечение керосиновой лампы</td><td>Настольный светильник под абажуром в тёмном углу, атмосферная подсветка</td></tr>
+      <tr><td><b>2700–3000 K</b></td><td>Тёплый бытовой</td><td>Гостиная, спальня, средняя линия интерьера</td></tr>
+      <tr><td><b>3500 K</b></td><td>Переходная зона</td><td>Кухонная рабочая поверхность, если нужен компромисс</td></tr>
+      <tr><td><b>4000 K</b></td><td>Нейтральный, со стороны холодный</td><td>Работа, где важна цветопередача — например, вышивка</td></tr>
+      <tr><td><b>5000 K</b></td><td>Холодный</td><td>Кладовая, гараж, гардеробная, прачечная</td></tr>
+    </tbody>
+  </table>
+  <div class="take"><span class="k">Следствие</span>Совместить в одном светильнике уют и нейтральное рабочее освещение почти невозможно — поэтому лампы разделяют по назначению: светильники для уюта и светильники для работы.</div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Часть III · Устройство</div>
+  <h2>Средняя линия интерьера</h2>
+  <p class="lead">Если из книги можно вынести всего одно понятие — это оно. Средняя линия объясняет, почему дорогая обстановка бывает неуютной, а простая — притягательной.</p>
+  <div class="two">
+    <p>В каком положении мы чаще всего проводим время дома? На кухне и в душе стоим, на кровати и в ванне лежим — а всё остальное время <b>сидим</b>: за столом, на диване, в кресле, перед телевизором. Фраза «Ты чего сидишь дома?» родилась не случайно.</p>
+    <p>Раз значительную часть времени мы проводим сидя, становится критично важно, что находится на уровне глаз сидящего человека. Эта условная линия делит высоту помещения примерно пополам.</p>
+    <p><b>Что её формирует:</b> комоды, бюро, столики-консоли, телевизионные тумбы — вся мебель с открытой горизонтальной поверхностью. И подоконник — но только если он не закрыт шторами. На эти поверхности встают вазы, свечи, декор, настольные светильники.</p>
+    <p><b>Когда она не выражена.</b> Если в комнате только вертикали и горизонтали — диван, высокий шкаф, ковёр, встроенный телевизор, — декору и лампам просто негде встать. Книжный шкаф не замена комоду: закрытые по бокам полки ограничивают угол обзора, а трёхмерные объекты предполагают не только фронтальный ракурс.</p>
+    <p><b>Король средней линии</b> — настольный светильник под абажуром. Он не закреплён стационарно: не нужно закладывать его в проект и штробить стены. Его можно взять и пойти по дому, примеряя, где он будет к месту.</p>
+    <p><b>Правило двух метров.</b> Локальный свет располагается примерно через каждые два метра. В гостиной это не менее пяти источников: лампа для чтения у дивана, светильник на ТВ-тумбе, свечи на подоконнике и журнальном столике, подсветка полок или картины.</p>
+  </div>
+  <div class="take"><span class="k">Главный вывод</span>Если монтировать только верхнюю подсветку и просто снижать её диммером, нужного эффекта не будет: <b>в комнате станет темнее, но не уютнее</b>. Уют создаётся общим полумраком <i>и</i> яркими очагами мягкого света в разных уголках комнаты.</div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Часть III · Устройство</div>
+  <h2>Почему 50/50 читается как хаос</h2>
+  <p class="lead">Вещи из разных эпох дают пространству глубину. Но соотношение должно считываться однозначно.</p>
+  <p>Должно быть понятно: это современный интерьер с винтажными элементами или винтажная квартира, отвечающая духу времени. Если выбрать очень близкое соотношение — 50 : 50 или 60 : 40, — в интерьере будет сложно проследить доминирующий стиль, и пространство рискует восприниматься как хаотичное.</p>
+  <table>
+    <thead><tr><th>Соотношение</th><th>Читается ли доминанта</th><th>Комментарий</th></tr></thead>
+    <tbody>
+      <tr><td><b>80 / 20</b></td><td>Да, сразу</td><td>Основная рекомендация книги. В новостройку добавить около 20% винтажных вещей</td></tr>
+      <tr><td><b>70 / 30</b></td><td>Да</td><td>Вторая допустимая пропорция. Винтаж заметно участвует в характере комнаты</td></tr>
+      <tr><td><b>60 / 40</b></td><td>С трудом</td><td>Доминанта размывается, запаса прочности почти нет</td></tr>
+      <tr><td><b>50 / 50</b></td><td>Нет</td><td>Пространство воспринимается как хаотичное</td></tr>
+    </tbody>
+  </table>
+  <div class="boxes">
+    <div class="box"><span class="k">Работает в обе стороны</span><p>Чтобы старинный интерьер не напоминал съёмочную площадку исторического фильма, в него добавляют около 20% современных предметов.</p></div>
+    <div class="box"><span class="k">Lagom</span><p>«Не много, не мало, а ровно в меру». Между «нищетой и разрухой» и «невротической безупречностью» есть третий вариант — продуманная небрежность.</p></div>
+    <div class="box"><span class="k">Теория брошенных носков</span><p>Проверка от знакомого автора: интерьер должен быть таким, чтобы сброшенная перед сном одежда не выглядела катастрофой.</p></div>
+    <div class="box"><span class="k">Узкая тропинка</span><p>Красота — грань между избыточностью и аскетизмом. Обе крайности — широкие проторённые дороги.</p></div>
+  </div>
+</div>
+
+<!-- ============ PART IV ============ -->
+<div class="newpage">
+  <div class="kick">Часть IV · Первоисточник</div>
+  <h2>Эллен Кей: «Красота — не роскошь, а необходимость»</h2>
+  <figure class="tall"><img src="assets/img11.jpg" alt="">
+    <figcaption>Ханна Паули. Портрет Эллен Кей. Nationalmuseum · CC0</figcaption></figure>
+  <p>Шведская писательница и педагог (1849–1926), идеолог концепции «этика через эстетику», духовный лидер дизайна как профессиональной деятельности. В 1899 году вышла её брошюра «Красота для всех» (<i>Skönhet för alla</i>), где она учила отличать красивое от уродливого и украшать дом простыми средствами. Книга известна в Швеции, но так и не получила международного распространения — издавалась только на шведском.</p>
+  <p>Автор отобрала из неё пятнадцать цитат. Те, что превращаются в прямые инструкции:</p>
+  <div class="boxes">
+    <div class="box"><span class="k">О покупке</span><p>Выбирая вещь в дом, решите, какую функцию она несёт и не слишком ли много в ней излишеств.</p></div>
+    <div class="box"><span class="k">О вкусе</span><p>«Самое короткое описание хорошего вкуса — честность». То есть никаких имитаций: настоящее дерево лучше росписи под мрамор.</p></div>
+    <div class="box"><span class="k">О шторах</span><p>Шторы должны двигаться. Их задача — не закрыть, а открыть окно.</p></div>
+    <div class="box"><span class="k">Об обивке</span><p>Фигура человека лучше выглядит на однотонной обивке — рисунок одежды не спорит с узором.</p></div>
+    <div class="box"><span class="k">О книгах</span><p>Книги — лучшее украшение дома. Вы не представляете, как подспудно влияет на образование дом с хорошими книгами.</p></div>
+    <div class="box"><span class="k">О вазах</span><p>Нарисованные на вазе цветы всегда кажутся мёртвыми рядом с живыми.</p></div>
+  </div>
+  <blockquote>Почему так трудно прийти к красоте? Потому что это тонкая грань между двумя крайностями: избыточностью и аскетизмом. Дорога избыточности широка, по ней шагают многие. Дорога аскетизма тоже широко проторена, и только узкая тропинка между ними может вывести к истинной красоте.<cite>Август Линдегрен, шведский архитектор, современник Эллен Кей</cite></blockquote>
+</div>
+
+<div class="newpage">
+  <div class="kick">Часть IV · Первоисточник</div>
+  <h2>Карин и Карл Ларссоны: инфлюэнсеры XIX века</h2>
+  <p class="lead">Карин создавала обстановку дома в Сундборне, Карл писал её акварелями. Революционные для эпохи решения во многом определили то, как скандинавский дом выглядит сегодня.</p>
+  <p>Белые стены, яркие цветовые акценты, незашторенные окна. В буржуазных кругах того времени не принято было принимать пищу под открытым небом, тем более взрослым за одним столом с детьми: время проводили на застеклённых верандах. Акварели Ларссона задали новую моду и показали, что жизнь в слиянии с природой возможна.</p>
+  <div class="gal">
+    <figure><img src="assets/img16.jpg" alt="">
+      <figcaption><b>«Завтрак под большой берёзой», 1896.</b> Та самая картина, которую книга советует найти: взрослые и дети вперемешку за одним столом под открытым небом — скандал для своего времени.</figcaption></figure>
+    <figure><img src="assets/img09.jpg" alt="">
+      <figcaption><b>«Веранда», серия «Ett hem».</b> Промежуточное пространство между домом и садом — прообраз того, что книга называет жизнью на террасе.</figcaption></figure>
+  </div>
+  <div class="take"><span class="k">Почему это важно для книги</span>Ларссоны — доказательство того, что «скандинавский стиль» не изобретение последних лет и не мода на минимализм. Крашеная мебель ярких оттенков, ковры, орнаменты и обилие предметов на его акварелях опровергают стереотип о белых стенах и пустоте.</div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Часть IV · Первоисточник</div>
+  <h2>Не пыль должна решать, как выглядит наш дом</h2>
+  <figure class="tall"><img src="assets/img12.jpg" alt="">
+    <figcaption>Метёлка из страусовых перьев. Wikimedia Commons · CC BY 3.0</figcaption></figure>
+  <p>Целый раздел книги посвящён метёлке от пыли — и за этим стоит принципиальный тезис. В практике автор замечала, что хозяева отказывались от решений, которые заметно улучшили бы интерьер. Причина одна: <b>страх погрязнуть в бесконечной борьбе с пылью</b> на объёмных предметах. Но тогда ориентиром невольно становится гостиничный номер — удобный, универсальный и безликий.</p>
+  <div class="ba">
+    <div class="was"><span class="k">Пипидастр (PP-duster)</span>Пыль прилипает за счёт электризации, щётку надо периодически мыть. Внутри тяжёлый металлический стержень — для хрупкого декора не годится: вместе с пылью на пол полетит и ваза.</div>
+    <div class="now"><span class="k">Страусовая метёлка</span>Не электризуется, сама не загрязняется — птичье оперение не удерживает пыль. Почти невесомые перья на деревянном стержне сметают пыль, не сдвигая предметы. Служит годами и выглядит эстетично — можно не прятать.</div>
+  </div>
+  <div class="take"><span class="k">Порядок скандинавской уборки</span>Сверху вниз, сначала сухое, потом влажное: смести пыль с горизонталей и объёмного декора → пропылесосить → влажная уборка пола → протереть столешницы и раковины.<br><br>Автор приравнивает метёлку по влиянию на удобство быта <b>к посудомоечной машине</b> и многим клиентам дарит её вместе с дизайн-проектом.</div>
+</div>
+
+<!-- ============ APPENDIX ============ -->
+<div class="newpage">
+  <div class="kick">Приложение</div>
+  <h2>Девять сквозных правил</h2>
+  <p class="lead">Эти правила проходят через все десять глав и связывают их между собой. Каждое — проверяемое решение, а не декларация о вкусе.</p>
+  <div class="law"><div class="n">1</div><div><h4>Главное в интерьере — люди, а не поверхности</h4><p>Критерий любого решения не «идеально ли выровнено», а «добавит ли это уюта тем, кто здесь живёт». Дом — не шоурум мебельной фабрики.</p></div></div>
+  <div class="law"><div class="n">2</div><div><h4>Долгоживущее — однотонное, сменное — с узором</h4><p>Диван, встроенная мебель, плитка и пол служат 10–20 лет, а тренд живёт 3–5. За жизнь одного дивана мода сменится четыре раза.</p></div></div>
+  <div class="law"><div class="n">3</div><div><h4>Средняя линия интерьера</h4><p>Дома мы сидим — значит, работает то, что на уровне глаз сидящего: комоды, консоли, открытые подоконники и всё, что на них стоит.</p></div></div>
+  <div class="law"><div class="n">4</div><div><h4>Свет опускать вниз и дробить</h4><p>Тёплый, локальный, примерно через каждые два метра, минимум пять источников в гостиной. Уют — общий полумрак плюс очаги мягкого света.</p></div></div>
+  <div class="law"><div class="n">5</div><div><h4>Мобильное важнее стационарного</h4><p>И в бюджете, и в отделке, и на террасе: вкус выражать полотенцем и постером, а не плиткой; зонтом, а не навесом.</p></div></div>
+  <div class="law"><div class="n">6</div><div><h4>Lagom и продуманная небрежность</h4><p>Узкая тропинка между избыточностью и аскетизмом. Пропорция старого и нового — 80/20 или 70/30, но никогда 50/50.</p></div></div>
+  <div class="law"><div class="n">7</div><div><h4>Примерять, а не выбирать глазами</h4><p>Стул — телом. Цвет стен — пробными выкрасами при дневном и вечернем свете. Светильник — во включённом виде и вживую.</p></div></div>
+  <div class="law"><div class="n">8</div><div><h4>Не давать уходу диктовать дизайн</h4><p>Страусовая метёлка вместо отказа от декора. «Хаос, ограниченный рамками, — первый шаг на пути к порядку».</p></div></div>
+  <div class="law"><div class="n">9</div><div><h4>Насмотренность строится на вечернем свете</h4><p>Журнальные фото всегда дневные и пасмурные — искусственный свет вам просто не показали.</p></div></div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Приложение</div>
+  <h2>Что сделать сегодня вечером</h2>
+  <p class="lead">Всё из книги, ничего не требует ремонта и почти не требует денег.</p>
+  <div class="chk">
+    <div><span class="sq"></span><span>Выровнять книги на полке по <b>переднему</b> краю, а не задвигать вглубь: неровная фронтальная линия даёт визуальный шум, а на открытой полке заметнее пыль</span></div>
+    <div><span class="sq"></span><span>Оборвать со стеблей в вазе <b>все листья ниже уровня воды</b> — это важнее ежедневной смены воды</span></div>
+    <div><span class="sq"></span><span>Погасить верхний свет, оставить одну лампу под абажуром и свечу — и сравнить ощущение с обычным вечером</span></div>
+    <div><span class="sq"></span><span>Сфотографировать комнату днём и вечером с включёнными лампами, сравнить снимки</span></div>
+    <div><span class="sq"></span><span>Проверить, есть ли в доме <b>приставной столик</b> у дивана на высоте подлокотника</span></div>
+    <div><span class="sq"></span><span>Сделать инвентаризацию «предметов посадки»: стул за столом, рабочее кресло, кресло для отдыха, низкий табурет, диван</span></div>
+    <div><span class="sq"></span><span>Написать <b>сценарий жизни семьи</b>: кто где работает, где все собираются, сколько бывает гостей, какие цвета нравятся</span></div>
+    <div><span class="sq"></span><span>Нарисовать план комнаты сбоку и сверху, отметить все источники света и проверить среднюю линию</span></div>
+    <div><span class="sq"></span><span>Сделать пробные выкрасы на картонках в два слоя и посмотреть при дневном и вечернем свете</span></div>
+    <div><span class="sq"></span><span>Провести акустический тест: вынести из ванной весь текстиль, записать фразу на диктофон, вернуть текстиль и повторить</span></div>
+    <div><span class="sq"></span><span>Купить две лампочки одной мощности, но разной температуры, и сравнить в одном светильнике</span></div>
+    <div><span class="sq"></span><span>Попробовать <b>мокрую скатерть</b>: расстелить, сбрызнуть из пульверизатора, разгладить руками — вместо утюга</span></div>
+  </div>
+</div>
+
+<div class="newpage">
+  <div class="kick">Приложение</div>
+  <h2>Числовые ориентиры</h2>
+  <p class="lead">Все точные значения, которые книга даёт напрямую.</p>
+  <table>
+    <thead><tr><th>Параметр</th><th>Значение</th><th>Где применяется</th></tr></thead>
+    <tbody>
+      <tr><td>«Стокгольмский белый» для стен</td><td><b>NCS S 0502-Y</b></td><td>Краска для вертикальных поверхностей; потолок остаётся ярко-белым</td></tr>
+      <tr><td>Тёплый свет для жилых комнат</td><td><b>2000–2700 K</b></td><td>Настольные светильники под абажуром, атмосферная подсветка</td></tr>
+      <tr><td>Нейтральный свет для работы</td><td><b>4000 K</b></td><td>Там, где важна корректная цветопередача</td></tr>
+      <tr><td>Расстояние между источниками локального света</td><td><b>около 2 м</b></td><td>Расстановка ламп на средней линии</td></tr>
+      <tr><td>Источников света в гостиной</td><td><b>не менее 5</b></td><td>Лампа для чтения, у телевизора, свечи, подсветка полок</td></tr>
+      <tr><td>Пропорция нового и винтажного</td><td><b>80/20</b> или 70/30</td><td>Но не 50/50 — доминанта перестаёт читаться</td></tr>
+      <tr><td>Формат картины для стены средней высоты</td><td><b>от 50 × 70 см</b></td><td>Включая раму; меньшие форматы — в коридор, ванную, на кухню</td></tr>
+      <tr><td>Зазор навесного подоконника от стены</td><td><b>3–4 см</b></td><td>Чтобы тёплый воздух от радиатора поднимался тепловой завесой</td></tr>
+      <tr><td>Глубина проникновения дневного света</td><td><b>4–5 м</b></td><td>При стандартной высоте потолка, даже через большое окно</td></tr>
+      <tr><td>Диаметр рождественской звезды</td><td><b>70–90 см</b></td><td>Для окна среднего размера</td></tr>
+      <tr><td>Срок службы «мастодонтов» интерьера</td><td><b>10–20 лет</b></td><td>Диван, встроенная мебель, плитка, напольные покрытия</td></tr>
+      <tr><td>Срок жизни интерьерного тренда</td><td><b>3–5 лет</b></td><td>Отсюда правило: узор живёт на сменных предметах</td></tr>
+      <tr><td>Территория Швеции под лесом</td><td><b>70%</b></td><td>Почему дерево — традиционный материал</td></tr>
+      <tr><td>Начало темноты зимой в Стокгольме</td><td><b>15:00</b></td><td>Почему не вешают тюль: каждый луч на вес золота</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="newpage">
+  <div class="kick">Колофон</div>
+  <h2>Источники и лицензии</h2>
+  <div class="src">
+    <p><b>Книга.</b> Катя Карлинг. «Скандинавский дизайн: Как сделать дом уютным». — М.: Альпина Паблишер, 2024. — 223 с. Все идеи, цитаты, случаи из практики и числовые ориентиры принадлежат автору книги. Ни один пример в этом издании не добавлен со стороны: все предметы, люди и традиции названы в самой книге.</p>
+    <p style="margin-top:5mm"><b>Изображения.</b> Все — из Wikimedia Commons.</p>
+    <p style="margin-top:3mm">Карл Ларссон (1853–1919), акварели из серии «Ett hem» и отдельные работы — Nationalmuseum, Стокгольм. Общественное достояние: «Столовая» (1899), «Веранда» (1899), «Уютный уголок», «Кухня» (1898), «Цветочное окно» (1894), «Комната мамы и девочек» (1897), «Ленивый уголок», «Завтрак под большой берёзой» (1896).</p>
+    <p style="margin-top:3mm">Ханна Паули. Портрет Эллен Кей — Nationalmuseum, CC0.</p>
+    <p style="margin-top:3mm">Уильям Моррис. «Willow Bough» (1887) — The Metropolitan Museum of Art, CC0.</p>
+    <p style="margin-top:3mm">Wishbone Chair Ханса Вегнера — CC BY 4.0. PH-лампа Поуля Хеннингсена — CC BY-SA 3.0. Ваза Aalto (Savoy) — CC BY 4.0. Кресло Бруно Матссона — CC BY-SA 4.0. Шведские реечные стулья — CC BY-SA 1.0. Рождественская звезда julstjärna — CC BY-SA 3.0. Метёлка из страусовых перьев — CC BY 3.0.</p>
+    <p style="margin-top:5mm"><b>Веб-версия</b> с интерактивными демонстрациями: sonya012408.github.io/skandinavskiy-dizayn</p>
+    <p style="margin-top:5mm" >Это конспект и аналитический разбор, а не замена книге. Если материал оказался полезен — книгу стоит купить: в ней есть авторские схемы, таблицы и разделы, не вошедшие в этот разбор.</p>
+  </div>
+</div>
+
+</body>
+</html>
